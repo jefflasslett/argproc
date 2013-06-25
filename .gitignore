@@ -1,0 +1,5 @@
+argproc
+*.hi
+*.o
+
+
