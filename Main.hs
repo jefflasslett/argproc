@@ -67,7 +67,7 @@ main =
     args <- getArgs
  
     -- Parse options, getting a list of option actions
-    let (actions, nonOptions, errors) = getOpt RequireOrder optionDescriptions args
+    let (actions, nonOptions, errors) = getOpt Permute optionDescriptions args
  
     -- Here we thread startOptions through all supplied option actions
     opts <- foldl (>>=) (return defaultOptions) actions
