@@ -73,6 +73,8 @@ main =
     opts <- foldl (>>=) (return defaultOptions) actions
 
     printArgs opts
+
+    mapM_ putStrLn nonOptions
     putStrLn "Good-bye!"
 
  
