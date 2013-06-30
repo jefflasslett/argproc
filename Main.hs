@@ -39,7 +39,7 @@ optionDescriptions =
       ( OptArg ( \arg opt -> return $ opt { optOption = arg } ) "" )
       "Set this optional command-line option"
 
-  , Option "c" [ "carrier" ]
+  , Option "a" [ "argument" ]
       ( OptArg ( \arg opt -> return opt { optArgument = arg } ) "" )
       "Give this hypothetical command-line argument"
 
