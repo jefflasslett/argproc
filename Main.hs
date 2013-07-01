@@ -93,6 +93,18 @@ printArgs opts =
       Just s -> putStrLn $ "Argument: " ++ s
       _      -> putStrLn $ "Argument not given"
 
+
+printIndentedListWithHeading :: String -> [ String ] -> IO ()
+printIndentedListWithHeading _ [] = return ()
+printIndentedListWithHeading h xs =
+  do
+    putStrLn ""
+    putStrLn h
+    -- Map over the strings, printing them out.
+    mapM_ putStrLn $ zipWith (++) (map (\s -> "  " ++ s ++ " ") $ map show [1..] ) xs
+    putStrLn ""
+
+
 main = 
   do
     args <- getArgs
@@ -105,7 +117,12 @@ main =
 
     printArgs opts
 
-    mapM_ putStrLn nonOptions
+    -- Print out the non-option arguments.
+    printIndentedListWithHeading "Non-option arguments" nonOptions
+
+    -- Print out the errors.
+    printIndentedListWithHeading "Errors" errors
+ 
     putStrLn "Good-bye!"
 
  
