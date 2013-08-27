@@ -8,5 +8,8 @@ This program is probably only helpful for haskell noobs like myself.
 
 ## Compiling
 
-`$ ghc Main.hs -o argproc`
+```
+$ runhaskell Setup.hs configure
+$ runhaskell Setup.hs build
+```
 
