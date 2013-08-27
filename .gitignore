@@ -1,5 +1,5 @@
 argproc
 *.hi
 *.o
-
+dist/
 
